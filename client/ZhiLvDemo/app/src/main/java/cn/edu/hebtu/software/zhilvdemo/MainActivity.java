@@ -1,4 +1,4 @@
-package cn.edu.hebtu.software.zhilv;
+package cn.edu.hebtu.software.zhilvdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,5 +10,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 }

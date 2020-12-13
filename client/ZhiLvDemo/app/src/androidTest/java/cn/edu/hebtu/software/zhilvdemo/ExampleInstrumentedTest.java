@@ -1,4 +1,4 @@
-package cn.edu.hebtu.software.zhilv;
+package cn.edu.hebtu.software.zhilvdemo;
 
 import android.content.Context;
 
@@ -21,7 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-
-        assertEquals("cn.edu.hebtu.software.zhilv", appContext.getPackageName());
+        assertEquals("cn.edu.hebtu.software.zhilvdemo", appContext.getPackageName());
     }
 }

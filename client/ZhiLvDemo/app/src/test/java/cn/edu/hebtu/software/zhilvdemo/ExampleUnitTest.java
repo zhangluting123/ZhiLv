@@ -1,4 +1,4 @@
-package cn.edu.hebtu.software.zhilv;
+package cn.edu.hebtu.software.zhilvdemo;
 
 import org.junit.Test;
 

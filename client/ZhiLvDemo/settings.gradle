@@ -1,2 +1,2 @@
-rootProject.name='ZhiLv'
 include ':app'
+rootProject.name = "ZhiLvDemo"
