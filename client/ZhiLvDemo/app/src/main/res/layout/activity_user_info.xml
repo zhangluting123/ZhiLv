@@ -13,7 +13,6 @@
         android:id="@+id/info_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         app:title="个人资料"
         app:navigationIcon="@mipmap/logo_back">
         <RelativeLayout

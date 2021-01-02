@@ -10,5 +10,6 @@ public class FinalVariableUtil {
 
     public static final int RC_TAKE_PHOTO = 100;
     public static final int RC_CHOOSE_PHOTO = 200;
+    public static final int RC_CHOOSE_VIDEO = 300;
 
 }

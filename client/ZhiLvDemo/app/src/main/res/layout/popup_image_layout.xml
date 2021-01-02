@@ -9,6 +9,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="-66dp"
         android:orientation="vertical"
+        style="@style/AnimBottom"
         android:padding="10dp">
 
         <Button

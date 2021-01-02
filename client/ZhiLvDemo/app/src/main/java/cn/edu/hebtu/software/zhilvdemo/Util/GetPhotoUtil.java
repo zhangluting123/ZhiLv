@@ -1,8 +1,6 @@
 package cn.edu.hebtu.software.zhilvdemo.Util;
 
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
@@ -28,6 +26,12 @@ public class GetPhotoUtil {
         Intent intentToPickPic = new Intent(Intent.ACTION_PICK, null);
         intentToPickPic.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
         activity.startActivityForResult(intentToPickPic, FinalVariableUtil.RC_CHOOSE_PHOTO);
+    }
+
+    public static void chooseVideo(Activity activity) {
+        Intent intentToPickPic = new Intent(Intent.ACTION_PICK, null);
+        intentToPickPic.setDataAndType(MediaStore.Video.Media.EXTERNAL_CONTENT_URI, "video/*");
+        activity.startActivityForResult(intentToPickPic, FinalVariableUtil.RC_CHOOSE_VIDEO);
     }
 
 

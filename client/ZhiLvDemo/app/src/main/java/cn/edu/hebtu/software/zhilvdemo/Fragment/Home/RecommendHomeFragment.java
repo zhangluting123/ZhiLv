@@ -40,8 +40,6 @@ public class RecommendHomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_recommend_home, container, false);
         initTabsPager();
-//      getViews();
-
 
         return view;
     }

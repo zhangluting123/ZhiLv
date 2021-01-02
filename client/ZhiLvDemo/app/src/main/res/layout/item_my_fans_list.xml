@@ -52,7 +52,7 @@
         android:gravity="center"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:background="@drawable/btn_add_attention"
+        android:background="@drawable/btn_attention"
         android:text="+ 关注"
         android:textColor="@color/MyThemeColor"
         android:textSize="13sp" />

@@ -2,13 +2,19 @@ package cn.edu.hebtu.software.zhilvdemo.Fragment.Home;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +22,6 @@ import java.util.List;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import cn.edu.hebtu.software.zhilvdemo.Adapter.MyAttentionListAdapter;
-import cn.edu.hebtu.software.zhilvdemo.Adapter.TravelsMineAdapter;
 import cn.edu.hebtu.software.zhilvdemo.R;
 
 /**
@@ -32,15 +37,9 @@ public class UserRecommendFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if(null == view){
-            view = inflater.inflate(R.layout.fragment_user_recommend, container, false);
-            initData();
-            initView();
-        }
-        ViewGroup parent = (ViewGroup) view.getParent();
-        if(null != parent){
-            parent.removeView(view);
-        }
+        view = inflater.inflate(R.layout.fragment_user_recommend, container, false);
+        initData();
+        initView();
 
         return view;
     }
@@ -70,6 +69,28 @@ public class UserRecommendFragment extends Fragment {
             }
         });
         rl.setAdapter(adapter);
+
+        SmartRefreshLayout refreshLayout = view.findViewById(R.id.refresh_layout);
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.replaceAll(getData());
+                        refreshLayout.finishRefresh();
+                    }
+                },1000);
+            }
+        });
+    }
+
+    private List<String> getData(){
+        for (int i = 0; i < 6; i++)
+        {
+            mDatas.add( i,"ADD -> " + i);
+        }
+        return mDatas;
     }
 
 }

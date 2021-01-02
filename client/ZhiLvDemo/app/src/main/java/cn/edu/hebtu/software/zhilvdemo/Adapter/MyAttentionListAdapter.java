@@ -102,5 +102,10 @@ public class MyAttentionListAdapter extends RecyclerView.Adapter<MyAttentionList
     }
 
 
+    public void replaceAll(List<String> mDatas){
+        this.mDatas = mDatas;
+        notifyDataSetChanged();
+    }
+
 
 }

@@ -243,7 +243,6 @@ public class UserInfoActivity extends AppCompatActivity {
                     }
                     break;
                 case FinalVariableUtil.RC_TAKE_PHOTO:
-                    Log.e("hhh", "over");
                     RequestOptions requestOptions = new RequestOptions().skipMemoryCache(true).diskCacheStrategy(DiskCacheStrategy.NONE).circleCrop();
                     //将照片显示在userHead上
                     Glide.with(this).load(mTempPhotoPath).apply(requestOptions).into(userHead);

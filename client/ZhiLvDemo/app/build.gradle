@@ -52,5 +52,9 @@ dependencies {
     implementation 'com.zhy.base:fileprovider:1.0.0'
     //智能刷新控件
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-32'
+    //视频播放器
+    implementation 'cn.jzvd:jiaozivideoplayer:6.2.12'
+    //图片裁剪
+    implementation 'com.github.yalantis:ucrop:2.2.6'
 
 }

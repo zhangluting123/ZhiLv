@@ -9,7 +9,6 @@
         android:id="@+id/setting_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
         app:title="设置"
         app:navigationIcon="@mipmap/logo_back"
         app:titleTextAppearance="@style/Toolbar.TitleText">

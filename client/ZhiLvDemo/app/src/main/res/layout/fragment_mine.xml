@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.HomeFragment">
-    <cn.edu.hebtu.software.zhilvdemo.CustomView.StickyNavLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:elevation="0dp">
         <LinearLayout
             android:id="@+id/mine_topview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll"
             android:background="@color/white"
             android:orientation="vertical">
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="250dp">
@@ -142,7 +142,16 @@
             android:layout_height="10dp"
             android:background="@color/gray_light"/>
         </LinearLayout>
-        <include layout="@layout/pager_sliding_tabstrip"/>
-    </cn.edu.hebtu.software.zhilvdemo.CustomView.StickyNavLayout>
+        <com.astuetz.PagerSlidingTabStrip
+            android:id="@+id/pager_tabs"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="50dp" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-</FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

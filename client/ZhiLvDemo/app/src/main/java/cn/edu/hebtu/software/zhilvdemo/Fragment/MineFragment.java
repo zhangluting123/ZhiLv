@@ -25,6 +25,9 @@ import cn.edu.hebtu.software.zhilvdemo.Adapter.ChannelPagerAdapter;
 import cn.edu.hebtu.software.zhilvdemo.DetailActivity.MyAttentionListActivity;
 import cn.edu.hebtu.software.zhilvdemo.DetailActivity.MyFansListActivity;
 import cn.edu.hebtu.software.zhilvdemo.DetailActivity.SettingActivity;
+import cn.edu.hebtu.software.zhilvdemo.Fragment.Mine.CollectionMineFragment;
+import cn.edu.hebtu.software.zhilvdemo.Fragment.Mine.GoodMineFragment;
+import cn.edu.hebtu.software.zhilvdemo.Fragment.Mine.TravelsMineFragment;
 import cn.edu.hebtu.software.zhilvdemo.R;
 
 /**
@@ -40,7 +43,7 @@ public class MineFragment extends Fragment {
     private ViewPager pages;
     private PagerSlidingTabStrip tabs;
     private List<Fragment> fragmentList;
-    private String[] titles = {"游记","收藏"};
+    private String[] titles = {"游记","点赞","收藏"};
 
     private Button logout;
     private ImageView setting;
@@ -52,7 +55,6 @@ public class MineFragment extends Fragment {
     private TextView fansNum;
     private LinearLayout attention;
     private LinearLayout fans;
-
     private MyCustomListener customListener;
 
     @Nullable
@@ -76,6 +78,7 @@ public class MineFragment extends Fragment {
     private void initTabsPager(){
         pages =view.findViewById(R.id.pager_viewpager);
         tabs = view.findViewById(R.id.pager_tabs);
+        pages.setOffscreenPageLimit(titles.length);
         initFragment();
         adapter = new ChannelPagerAdapter(super.getActivity().getSupportFragmentManager(),fragmentList,titles);
         pages.setAdapter(adapter);
@@ -94,15 +97,13 @@ public class MineFragment extends Fragment {
     }
 
     private void initFragment() {
-        Fragment fragment = null;
         fragmentList = new ArrayList<Fragment>();
-        for(String title: titles){
-            fragment = new TravelsMineFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString("title",title);
-            fragment.setArguments(bundle);
-            fragmentList.add(fragment);
-        }
+        Fragment travelsMineFragment = new TravelsMineFragment();
+        Fragment goodMineFragment = new GoodMineFragment();
+        Fragment collectionMineFragment = new CollectionMineFragment();
+        fragmentList.add(travelsMineFragment);
+        fragmentList.add(goodMineFragment);
+        fragmentList.add(collectionMineFragment);
     }
 
     /**
@@ -135,6 +136,7 @@ public class MineFragment extends Fragment {
         userHead.setOnClickListener(customListener);
         attention.setOnClickListener(customListener);
         fans.setOnClickListener(customListener);
+
     }
 
     /**
